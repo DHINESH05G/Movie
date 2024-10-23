@@ -25,7 +25,7 @@ public class SecurityConfig {
         this.userDetailsService = userDetailsService;
     }
 
-    /*@Bean
+    @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(authorize -> authorize
@@ -34,22 +34,19 @@ public class SecurityConfig {
                 .httpBasic(withDefaults());;
 
         return http.build();
-    }*/
-
+    }
+    /*
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http
-                .csrf().disable()
+        http.csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/api/user/**").authenticated()
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-
-        // Add JWT token filter here
-        // http.addFilterBefore(jwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
-
         return http.build();
     }
+    */
+
     @Bean
     public AuthenticationManager authManager(HttpSecurity http) throws Exception {
         AuthenticationManagerBuilder authenticationManagerBuilder =

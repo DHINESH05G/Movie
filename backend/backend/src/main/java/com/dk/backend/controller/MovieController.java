@@ -35,22 +35,22 @@ public class MovieController {
         List<Movie> movies = movieService.getMoviesByGenre(genre);
         return ResponseEntity.ok(movies);
     }
-
-    // Add new movie (admin only)
+    /*--------------------------    Admin only ----------------------*/
+    // Add new movie
     @PostMapping
     public ResponseEntity<Movie> addMovie(@RequestBody Movie movie) {
         Movie savedMovie = movieService.addMovie(movie);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedMovie);
     }
 
-    // Update movie (admin only)
+    // Update movie
     @PutMapping("/{id}")
     public ResponseEntity<Movie> updateMovie(@PathVariable Long id, @RequestBody Movie movie) {
         Movie updatedMovie = movieService.updateMovie(id, movie);
         return ResponseEntity.ok(updatedMovie);
     }
 
-    // Delete movie (admin only)
+    // Delete movie
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteMovie(@PathVariable Long id) {
         movieService.deleteMovie(id);

@@ -4,10 +4,13 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
+
 
 @Entity
 @Getter
 @Setter
+@Table(name = "movies")
 public class Movie {
 
     @Id
@@ -15,9 +18,8 @@ public class Movie {
     private Long id;
 
     private String title;
-    private String description;
     private String genre;
-    private String releaseDate;
-    private String videoUrl;
+    private String description;
+    private LocalDate releaseDate;
 
 }

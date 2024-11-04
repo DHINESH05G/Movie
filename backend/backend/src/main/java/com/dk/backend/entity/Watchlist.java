@@ -5,10 +5,7 @@ import lombok.*;
 
 @Entity
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-@RequiredArgsConstructor
-@Table(name = "watchlists")
+@Table(name = "watchlist")
 public class Watchlist {
 
     @Id
@@ -16,10 +13,10 @@ public class Watchlist {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "userId")
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "movie_id")
+    @JoinColumn(name = "movieId")
     private Movie movie;
 }

@@ -1,12 +1,13 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
 
 @Injectable({
   providedIn:'root'
 })
-expect class ProfileService {
+export class ProfileService {
   private baseUrl = 'http://localhost:8080/api/user';
-  constructor(private http:HttpClient)
+  constructor(private http: HttpClient) {}
   getUserProfile(): Observable<any> {
     const token = localStorage.getItem('auth-token');
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);

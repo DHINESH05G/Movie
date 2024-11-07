@@ -1,0 +1,14 @@
+<div class="container" *ngIf="movie">
+  <div class="row">
+    <div class="col-md-4">
+      <img [src]="movie.imageUrl" alt="movie.title" class="img-fluid">
+    </div>
+    <div class="col-md-8">
+      <h2>{{ movie.title }}</h2>
+      <p><strong>Genre:</strong> {{ movie.genre }}</p>
+      <p><strong>Release Date:</strong> {{ movie.releaseDate | date }}</p>
+      <p><strong>Description:</strong> {{ movie.description }}</p>
+      <button class="btn btn-primary" (click)="playMovie()">Watch Now</button>
+    </div>
+  </div>
+</div>

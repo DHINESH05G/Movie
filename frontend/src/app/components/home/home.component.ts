@@ -12,9 +12,24 @@ export class HomeComponent implements OnInit {
   constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
+    this.loadMovies();
+  }
+
+  loadMovies(): void {
     this.movieService.getMovies().subscribe(
       data => this.movies = data,
       error => console.error('Error fetching movies:', error)
     );
+  }
+
+  onSearch(searchTerm: string): void {
+    if (searchTerm) {
+      this.movieService['searchMovies'](searchTerm).subscribe(
+        (data: any[]) => this.movies = data,
+        (error: any) => console.error('Error searching movies:', error)
+      );
+    } else {
+      this.loadMovies();
+    }
   }
 }

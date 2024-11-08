@@ -1,3 +1,20 @@
+<app-search-bar (searchEvent)="onSearch($event)"></app-search-bar>
+<div class="container">
+  <h2>Search Results</h2>
+  <div *ngIf="movies.length === 0">No results found.</div>
+  <div class="row">
+    <div class="col-md-3" *ngFor="let movie of movies">
+      <div class="card">
+        <img [src]="movie.imageUrl" class="card-img-top" alt="movie.title">
+        <div class="card-body">
+          <h5 class="card-title">{{ movie.title }}</h5>
+          <p class="card-text">{{ movie.description | slice:0:100 }}...</p>
+          <a [routerLink]="['/movies', movie.id]" class="btn btn-primary">View Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="container">
   <h2>Trending Movies/Series</h2>
   <div class="row">

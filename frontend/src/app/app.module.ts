@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { ProfileComponent } from './components/profile/profile.component';
 import { HomeComponent } from './components/home/home.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
     LoginComponent,
     ProfileComponent,
     HomeComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,

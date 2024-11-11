@@ -29,5 +29,11 @@ export class MovieDetailsComponent implements OnInit {
     alert("Playing movie: " + this.movie.title);
     // Here you would handle the video player logic or route to a player page
   }
+  addToWatchlist(): void {
+    this.movieService.addToWatchlist(this.movie.id).subscribe(
+      () => alert(`${this.movie.title} has been added to your watchlist!`),
+      error => console.error('Error adding to watchlist:', error)
+    );
+  }
   
 }

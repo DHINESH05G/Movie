@@ -17,5 +17,16 @@ export class MovieService {
   getMovieById(id: string): Observable<any> {
     return this.http.get(`${this.baseUrl}/${id}`);
   }
-  
+  // Add to Watchlist
+  addToWatchlist(movieId: string): Observable<any> {
+  return this.http.post(`/api/watchlist/add`, { movieId });
+  }
+  // Remove from Watchlist
+  removeFromWatchlist(movieId: string): Observable<any> {
+    return this.http.delete(`/api/watchlist/remove/${movieId}`);
+  } 
+  // Get Watchlist
+  getWatchlist(): Observable<any> {
+    return this.http.get(`/api/watchlist`);
+  }
 }

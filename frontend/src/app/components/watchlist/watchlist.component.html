@@ -1,0 +1,15 @@
+<div class="container">
+  <h2>Your Watchlist</h2>
+  <div *ngIf="watchlist.length === 0">Your watchlist is empty.</div>
+  <div class="row">
+    <div class="col-md-3" *ngFor="let movie of watchlist">
+      <div class="card">
+        <img [src]="movie.imageUrl" class="card-img-top" alt="movie.title">
+        <div class="card-body">
+          <h5 class="card-title">{{ movie.title }}</h5>
+          <button class="btn btn-danger" (click)="removeFromWatchlist(movie.id)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

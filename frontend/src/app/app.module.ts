@@ -9,6 +9,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { HomeComponent } from './components/home/home.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { WatchlistComponent } from './components/watchlist/watchlist.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     ProfileComponent,
     HomeComponent,
     MovieDetailsComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    WatchlistComponent
   ],
   imports: [
     BrowserModule,

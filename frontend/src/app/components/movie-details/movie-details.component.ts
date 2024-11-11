@@ -29,4 +29,5 @@ export class MovieDetailsComponent implements OnInit {
     alert("Playing movie: " + this.movie.title);
     // Here you would handle the video player logic or route to a player page
   }
+  
 }

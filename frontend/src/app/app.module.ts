@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { WatchlistComponent } from './components/watchlist/watchlist.component';
+import { VideoPlayerComponent } from './components/video-player/video-player.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { WatchlistComponent } from './components/watchlist/watchlist.component';
     HomeComponent,
     MovieDetailsComponent,
     SearchBarComponent,
-    WatchlistComponent
+    WatchlistComponent,
+    VideoPlayerComponent
   ],
   imports: [
     BrowserModule,

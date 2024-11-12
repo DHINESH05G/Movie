@@ -29,4 +29,8 @@ export class MovieService {
   getWatchlist(): Observable<any> {
     return this.http.get(`/api/watchlist`);
   }
+  getMovieStreamUrl(movieId: string): Observable<string> {
+    return this.http.get(`/api/movies/stream/${movieId}`, { responseType: 'text' });
+  }
+  
 }
